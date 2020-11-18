@@ -14,12 +14,15 @@ Plug 'jistr/vim-nerdtree-tabs'
  
 Plug 'xolox/vim-misc'
 Plug 'majutsushi/tagbar'
+Plug 'xolox/vim-easytags'
 Plug 'Raimondi/delimitMate'
 
 Plug 'nanotech/jellybeans.vim'
+Plug 'doums/darcula'
 
 Plug 'chiel92/vim-autoformat'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'preservim/nerdcommenter'
 "Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
  
@@ -56,15 +59,29 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 "set guifont=Fira\ Code:h12
+set guifont=Neep\ 18
 set cursorline
- 
+
+
 syntax on
-colorscheme jellybeans
+
+"colorscheme jellybeans
+let g:dracula_colorterm = 0
+colorscheme darcula
+set termguicolors
+
+hi! Normal ctermbg=NONE guibg=NONE
+hi! Normal ctermbg=NONE guibg=NONE
 
 " NERDTREE 
 let NERDTreeShowHidden=1 
 let NERDTreeWinSize = 45
    
+let g:easytags_events = ['BufReadPost', 'BufWritePost']
+let g:easytags_async = 1
+let g:easytags_dynamic_files = 2
+let g:easytags_resolve_links = 1
+let g:easytags_suppress_ctags_warning = 1
 
 " DELIMIT MATE
 let delimitMate_expand_cr = 1
